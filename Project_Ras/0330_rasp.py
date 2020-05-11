@@ -218,7 +218,7 @@ def ultra_sensor_on():
               if count ==1:
                   pa_time = time.time()
               print("sub time :%d"%sub_time)
-              if count > 30:
+              if count > 60*10:
                   pa_time = time.time() - pa_time
                   sub_time += pa_time
                   cnt_time = now_time - first_time -sub_time
@@ -230,7 +230,7 @@ def ultra_sensor_on():
             else :
                 
                 count_exception +=1
-                if count_exception == 10:
+                if count_exception == 20:
                     count = 0
                     count_exception =0
                     print("reset")
